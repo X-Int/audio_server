@@ -5,9 +5,9 @@
 
 //定义SPH6045引脚
 #define SEL 10
-#define LRCL 11
-#define DOUT 12
-#define BCLK 13
+#define LRCL 15
+#define DOUT 16
+#define BCLK 17
 //定义max98357引脚
 #define LRCL2 4
 #define BLCK2 5
@@ -25,6 +25,8 @@ uint8_t *wav_buffer;
 size_t wav_size;
 //wav头文件
 const int WAVE_HEADER_SIZE = PCM_WAV_HEADER_SIZE;
+
+I2SClass I2S_MAX;
 
 void writeWavHeader(File &file, size_t data_size) {
   // 写入WAV头的内容，包括文件头、格式描述符等
@@ -79,7 +81,6 @@ void serPrint(uint8_t* wav_buffer){
     }
   }
 }
-
 void setup() {
   // 初始化串口：
   Serial.begin(115200);
@@ -135,7 +136,6 @@ void setup() {
   Serial.println(num_of_channels);
 
   //max98357 I2S初始化
-  I2SClass I2S_MAX;
   I2S_MAX.setPins(I2S_SCK2,I2S_WS2,I2S_DOUT2);
   I2S_MAX.begin(I2S_MODE_STD,16000, I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_MONO,I2S_STD_SLOT_LEFT);
   if(! I2S_MAX.begin(I2S_MODE_STD,16000, I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_MONO)){
@@ -146,4 +146,6 @@ void setup() {
   Serial.println("播放完成");
  }
 
-void loop() {}
+void loop() {
+  I2S_MAX.playWAV(wav_buffer,wav_size);
+}
