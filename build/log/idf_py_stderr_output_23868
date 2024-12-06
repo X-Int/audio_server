@@ -1,0 +1,18 @@
+D:/ESP_ESPRESSIF/esp-adf/components/esp_codec_dev/Kconfig:4: warning: ESP_IDF_VERSION has 'option env="ESP_IDF_VERSION"', but the environment variable ESP_IDF_VERSION is not set
+CMake Error in D:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_wifi/CMakeLists.txt:
+  Imported target "core" includes non-existent path
+
+    "D:/ESP-IDF FILE/play_mp3_control/build/config"
+
+  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
+
+  * The path was deleted, renamed, or moved to another location.
+
+  * An install or uninstall procedure did not complete successfully.
+
+  * The installation package was faulty and references files it does not
+  provide.
+
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

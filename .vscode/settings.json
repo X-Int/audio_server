@@ -1,0 +1,21 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "files.associations": {
+    "freertos.h": "c",
+    "esp_peripherals.h": "c",
+    "audio_element.h": "c",
+    "i2s_stream.h": "c",
+    "i2s_common.h": "c",
+    "wav_header.h": "c",
+    "i2s_std.h": "c",
+    "spiffs_stream.h": "c",
+    "mp3_decoder.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "idf.adapterTargetName": "esp32s3",
+  "idf.portWin": "COM15",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "idf.flashType": "UART"
+}

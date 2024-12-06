@@ -1,0 +1,1 @@
+D:/ESP_ESPRESSIF/esp-adf/components/esp_codec_dev/Kconfig:4: warning: ESP_IDF_VERSION has 'option env="ESP_IDF_VERSION"', but the environment variable ESP_IDF_VERSION is not set
